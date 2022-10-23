@@ -17,26 +17,8 @@ namespace DataAccessLayer.Database
 		{
 			_databaseInstance = new Dictionary<Tuple<string, string>, DataEntity>();
 			
-			// added for test
-			// comment to remove it
-			Insert(new Company()
-			{
-				SiteId = "1",
-				CompanyCode = "4",
-				CompanyName = "Rogers"
-			} as T);
-			Insert(new Company()
-			{
-				SiteId = "2",
-				CompanyCode = "5",
-				CompanyName = "TD"
-			} as T);
-			Insert(new Company()
-			{
-				SiteId = "3",
-				CompanyCode = "15",
-				CompanyName = "Jonas"
-			} as T);
+			// added for test purpose, can be found at the bottom of the page
+			InsertTestData();
 		}
 
 		public bool Insert(T data)
@@ -199,6 +181,52 @@ namespace DataAccessLayer.Database
 			return Task.FromResult(UpdateAll(filter, fieldToUpdate, newValue));
 		}
 
+		/// <summary>
+		/// Added for test purpose
+		/// </summary>
+		public void InsertTestData()
+		{
+			Insert(new Company()
+			{
+				SiteId = "1",
+				CompanyCode = "4",
+				CompanyName = "Rogers"
+			} as T);
+			Insert(new Company()
+			{
+				SiteId = "2",
+				CompanyCode = "5",
+				CompanyName = "TD"
+			} as T);
+			Insert(new Company()
+			{
+				SiteId = "3",
+				CompanyCode = "15",
+				CompanyName = "Jonas"
+			} as T);
+
+			Insert(new Employee()
+			{
+				SiteId = "10",
+				CompanyCode = "15",
+				EmployeeCode = "80",
+				EmployeeName = "Yalin",
+				Occupation = "MSc Computer Science",
+				Phone = "(123) 456 78 90",
+				LastModified = DateTime.Now
+			} as T);
+			
+			Insert(new Employee()
+			{
+				SiteId = "11",
+				CompanyCode = "15",
+				EmployeeCode = "81",
+				EmployeeName = "Aydin",
+				Occupation = "BEng",
+				Phone = "(901) 123 45 67",
+				LastModified = DateTime.Now
+			} as T);
+		}
 	
 	}
 }

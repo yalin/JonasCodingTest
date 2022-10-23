@@ -141,13 +141,16 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Logging\ApiExceptionLogger.cs" />
     <Compile Include="Logging\Logging.cs" />
     <Compile Include="Models\ArSubledgerDto.cs" />
+    <Compile Include="Models\BaseDto.cs" />
     <Compile Include="Models\CompanyDto.cs" />
+    <Compile Include="Models\EmployeeDto.cs" />
     <Compile Include="Models\WebApiError.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -177,6 +180,9 @@
       <Project>{44867c7e-02d8-40a2-b2c4-0463f31b945e}</Project>
       <Name>DataAccessLayer.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CustomMapper" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

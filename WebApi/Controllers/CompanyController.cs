@@ -24,6 +24,8 @@ namespace WebApi.Controllers
         public async Task<IHttpActionResult> GetAsync()
         {
             var items = await _companyService.GetAllCompanies();
+            if (items == null)
+                throw new Exception("Record not found");
             return Ok(_mapper.Map<IEnumerable<CompanyDto>>(items));
         }
 

@@ -6,3 +6,4 @@
 /WebApi/Web.Debug.*
 /WebApi/Web.Release.config
 .idea
+/WebApi/log.csv

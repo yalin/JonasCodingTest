@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DataAccessLayer.Model.Interfaces;
@@ -43,7 +44,7 @@ namespace DataAccessLayer.Repositories
                 itemRepo.FaxNumber = company.FaxNumber;
                 itemRepo.PhoneNumber = company.PhoneNumber;
                 itemRepo.PostalZipCode = company.PostalZipCode;
-                itemRepo.LastModified = company.LastModified;
+                itemRepo.LastModified = DateTime.Now;
                 return await _companyDbWrapper.UpdateAsync(itemRepo);
             }
 
